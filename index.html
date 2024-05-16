@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html style=\"width:100%;height:100%;\" lang=\"fr-FR\">
+  <head>
+    <title>".ucwords(str_replace("-", " ", $this->PROJECT_NAME))."</title>
+    <meta http-equiv=\"content-type\" content=\"text/html; charset=UTF-8\">
+    <meta http-equiv=\"cache-control\" content=\"no-cache\">
+    <meta name=\"description\" content=\"\">
+    <meta name=\"keywords\" content=\"\">
+    <meta name=\"author\" content=\"Pierre Schebath\">
+    <meta name=\"creator\" content=\"Pierre Schebath\">
+    <meta name=\"publisher\" content=\"Pierre Schebath\">
+    <meta name=\"copyright\" content=\"Lugtech Web & App - Pierre Schebath\">
+    <meta name=\"viewport\" content=\"width=device-width, height=device-height, initial-scale=1\">
+    <meta name=\"robots\" content=\"all\">
+    <meta name=\"robots\" content=\"max-snippet:-1\">
+    <meta name=\"robots\" content=\"max-image-preview:standard\">
+    <meta name=\"robots\" content=\"max-video-preview:0\">
+    <!-- <link rel=\"shortcut icon\" href=\"images/favicon.ico\" type=\"image/x-icon\"> -->
+    <link rel=\"stylesheet\" href=\"css/default.css\">
+  </head>
+  <body>
+    <div id=\"alert-message\" ></div>
+    <header>
+      <nav>
+        <h1 class=\"gradient-title\"> Mouvement-Constituant-Populaire.github.io </h1>
+        <h2>".ucwords(str_replace("-", " ", $this->PROJECT_NAME))."</h2>
+      </nav>
+    </header>
+    <link rel=\"stylesheet\" href=\"css/cards.css\">
+    <link rel=\"stylesheet\" href=\"css/widget-IHM.css\">
+    <link rel=\"stylesheet\" href=\"css/mcp-jeux-dmc.css\">
+    <link rel=\"stylesheet\" href=\"css/sablier.css\">
+    <div id=\"mcp-game-list\"  class=\"on\">
+      <p>Bienvenue sur la gare d'aiguillage des prototypes du MCP !<br> Voici les prototypes des projets hébergés sur notre Github.</p>
+      <ul class=\"cards\">
+        <!-- 
+             <li><a href=\"#url\"><b>MENU</b></a><span>♥</span>
+               <ul>
+                 <li><a href=\"#\">Item</a>
+                 </li>
+                 <li><a href=\"#\">Item</a>
+                 </li>
+                 <li><a href=\"#\">Item</a>
+                 </li>
+                 <li><a href=\"#\">Item</a>
+                 </li>
+               </ul><span>♥</span>
+             </li>
+        <li><a href=\"#url\"><b>MENU</b></a><em>♣</em>
+          <ul>
+            <li><a href=\"#\">Item</a>
+            </li>
+            <li><a href=\"#\">Item</a>
+            </li>
+            <li><a href=\"#\">Item</a>
+            </li>
+            <li><a href=\"#\">Item</a>
+            </li>
+          </ul><em>♣</em>
+        </li>
+        <li><a href=\"#url\"><b>MENU</b></a><span>♦</span>
+          <ul>
+            <li><a href=\"#\">Item</a>
+            </li>
+            <li><a href=\"#\">Item</a>
+            </li>
+            <li><a href=\"#\">Item</a>
+            </li>
+            <li><a href=\"#\">Item</a>
+            </li>
+            <li><a href=\"#\">Item</a>
+            </li>
+          </ul><span>♦</span>
+        </li>
+        <li><a href=\"#url\"><b>Futur Jeux</b></a><em>♠</em>
+          <ul>
+            <li><a href=\"#\">Relges</a>
+            </li>
+            <li><a href=\"#\">Item</a>
+            </li>
+            <li><a href=\"#\">Item</a>
+            </li>
+            <li><a href=\"#\">Item</a>
+            </li>
+          </ul><em>♠</em>
+        </li>
+        -->
+        <li class=\"mcp-game\">
+          <a href=\"/play/Des-mots-Craties\"><b>Des-mots-Craties</b></a>
+          <h3>Des-mots-Craties</h3>
+          <span>♥</span>
+          <ul>
+            <li>
+              <p>Techniquement le but est de marquer autant de points que possible, mais l’objectif principal reste d’enrichir son vocabulaire et d’acquérir de nouvelles connaissances en s’amusant.</p>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <!-- widget IHM -->
+
+    <div id=\"mcp-game-dmc\" class=\"widget off tableview tableview-has-footer\">
+      <div class=\"info-section\">
+        <h2>Reprendre</h2>
+        <table class=\"table nofill table-striped\">
+          <thead>
+            <tr>
+              <th colspan=\"2\">Parties</th>
+              <th>Equipes</th>
+              <th>Manches</th>
+              <th>Niveau</th>
+            </tr>
+          </thead>
+          <tbody class=\"table-hover\">
+            <!-- Contenu du tableau -->
+            <tr class=\"in-progress\">
+              <td>1</td>
+              <td>Partie 1</td>
+              <td>4</td>
+              <td>3</td>
+              <td>Intermédiaire</td>
+            </tr>
+            <tr class=\"in-progress\">
+              <td>2</td>
+              <td>Partie 2</td>
+              <td>6</td>
+              <td>3</td>
+              <td>Facile</td>
+            </tr>
+            <tr class=\"in-progress\">
+              <td>3</td>
+              <td>Partie 3</td>
+              <td>4</td>
+              <td>3</td>
+              <td>Intermédiaire</td>
+            </tr>
+            <!-- Ajoutez ici d'autres lignes si nécessaire -->
+          </tbody>
+        </table>
+      </div>
+
+      <hr>
+
+      <div class=\"create-section\">
+        <h2>Créer Une Partie</h2>
+        <form name=\"new-game\" onsubmit=\"return false;\">
+          <label>Partie :
+            <input type=\"text\" id=\"pseudo\" for=\"new-game\" name=\"game-name\" placeholder=\"Entrez le nom de la partie\" required>
+          </label>
+          <label for=\"options\">Choisir une option :</label>
+          <div id=\"optionConfig\" >
+            <input class=\"hidden-switch\" type=\"radio\" for=\"new-game\" name=\"pre-config\" value=\"mode\" required/>
+            <button id=\"pre-config-static\" class=\"button\" title=\"Nombre d'equipe predefinis.\"type=\"button\">Statique</button>
+            <button id=\"pre-config-dynamic\" class=\"button\" title=\"N'importe qui peux rejoindre en cour de partie.\" type=\"button\">Dynamique</button>
+          </div>
+
+          <div id=\"static\" class=\"off\">
+            <ul id=\"list-player\">
+              <li>
+                <input id=\"player-name\" type=\"text\" name=\"player-name\" class=\"input-field\" placeholder=\"Saisissez votre pseudo/equipe\">
+                <button id=\"btn-add-player\" class=\"add-btn\" type=\"button\">Ajouter</button>
+              </li>
+            </ul>
+          </div>
+
+          <div id=\"dynamic\" class=\"off\">
+            <input id=\"player-name\" type=\"text\" class=\"input-field\" for=\"new-game\" name=\"player-name\" placeholder=\"Saisissez votre pseudo/equipe\">
+          </div>
+          
+          <fieldset>
+            <legend>Selectionner la vitesse du jeux:</legend>
+            <label>
+              <input type=\"radio\" for=\"new-game\" name=\"speed\" value=\"short\" checked />
+              Cours
+            </label>
+            <label>
+              <input type=\"radio\" for=\"new-game\" name=\"speed\" value=\"long\" />
+              Long
+            </label>
+          </fieldset>
+          <fieldset>
+            <legend>Selectionner la difficulte du jeux:</legend>
+            <label>
+              <input type=\"radio\" for=\"new-game\" name=\"level\" value=\"1\" checked />
+              Facile
+            </label>
+            <label>
+              <input type=\"radio\" for=\"new-game\" name=\"level\" value=\"2\" />
+              Intermédiaire
+            </label>
+            <label>
+              <input type=\"radio\" for=\"new-game\" name=\"level\" value=\"3\" />
+              Difficile
+            </label>
+          </fieldset>
+          <button id=\"new-game\" class=\"enable\" type=\"submit\">Démarrer</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- DMC LU+AUNCHED START-->
+    <div id=\"mcp-game-dmc-launched\" class=\"off app\">
+      <div id=\"container-sablier\">
+        <div class=\"sablier\"></div>
+        <div class=\"timer-container\">
+          <div class=\"row\">
+	    <div class=\"clock\" id=\"clock\">
+	      <div class=\"segments minutes-ten\">
+	        <div class=\"segment\"></div>
+	        <div class=\"segment\"></div>
+	        <div class=\"segment\"></div>
+	        <div class=\"segment\"></div>
+	        <div class=\"segment\"></div>
+	        <div class=\"segment\"></div>
+	        <div class=\"segment\"></div>
+	      </div>
+	      <div class=\"segments minutes-one\">
+	        <div class=\"segment\"></div>
+	        <div class=\"segment\"></div>
+	        <div class=\"segment\"></div>
+	        <div class=\"segment\"></div>
+	        <div class=\"segment\"></div>
+	        <div class=\"segment\"></div>
+	        <div class=\"segment\"></div>
+	      </div>
+	      <div class=\"points\">
+	        <div class=\"point\"></div>
+	        <div class=\"point\"></div>
+	      </div>
+	      <div class=\"segments seconds-ten\">
+	        <div class=\"segment\"></div>
+	        <div class=\"segment\"></div>
+	        <div class=\"segment\"></div>
+	        <div class=\"segment\"></div>
+	        <div class=\"segment\"></div>
+	        <div class=\"segment\"></div>
+	        <div class=\"segment\"></div>
+	      </div>
+	      <div class=\"segments seconds-one\">
+	        <div class=\"segment\"></div>
+	        <div class=\"segment\"></div>
+	        <div class=\"segment\"></div>
+	        <div class=\"segment\"></div>
+	        <div class=\"segment\"></div>
+	        <div class=\"segment\"></div>
+	        <div class=\"segment\"></div>
+	      </div>
+	    </div>
+          </div>
+        </div>
+      </div>
+      <div class=\"row text-center\">
+        <div class=\"col-xs-12 btn-start\">
+          <button id=\"start\">start</button>
+          <button id=\"reset\" class=\"hidden\">stop</button>
+        </div>
+      </div>
+    </div>
+    <p>Sheets API Quickstart</p>
+
+    <pre id=\"content\" style=\"white-space: pre-wrap;\"></pre>
+
+
+    <!-- DMC LAUNCHED END -->
+
+    <script language=\"JavaScript\" type=\"text/javascript\" src=\"js/tools.js\"></script>
+    <script language=\"JavaScript\" type=\"text/javascript\" src=\"js/timer.js\"></script>
+    <script language=\"JavaScript\" type=\"text/javascript\" src=\"js/dmc.js\"></script>
+    <script language=\"JavaScript\" type=\"text/javascript\" src=\"js/mcp-game.js\"></script>
+    <script async defer src=\"https://apis.google.com/js/api.js\" onload=\"gapiLoaded()\"></script>
+    <script async defer src=\"https://accounts.google.com/gsi/client\" onload=\"gisLoaded()\"></script>
+
+    <footer>
+      <p>
+        <i>L'ensemble des documents, codes sources et images sont distribués sous la licence CC-BY-SA V2.0.<br>
+          Conçu et développé par MCP Copyright &copy; <script>document.write(new Date().getFullYear())</script>.<br>Sauf pour les contenus dont il est fait mention explicitement d'une autre licence ou d'un copyright tiers.
+        </i>
+      </p>
+      <script src=\"js/jquery-3.7.1.min.js\"></script>
+    </footer>
+</body></html>
